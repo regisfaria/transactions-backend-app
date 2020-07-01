@@ -15,9 +15,6 @@ class CreateTransactionService {
   }
 
   public execute({ title, value, type }: Request): Transaction {
-    if (type !== ('income' || 'outcome')) {
-      throw Error('unknow transaction type');
-    }
     if (value <= 0) {
       throw Error('invalid transaction value');
     }
